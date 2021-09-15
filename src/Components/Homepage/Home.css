@@ -1,0 +1,213 @@
+.cards {
+  width: 100vw;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card__one {
+  width: 300px;
+  height: 400px;
+  background: #edfbec;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card__two {
+  width: 300px;
+  height: 400px;
+  background: #d1f8d0;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card__two:hover {
+  transform: scale(1.1);
+}
+.card__one:hover {
+  transform: scale(1.1);
+}
+.component2,
+.component1 {
+  width: auto !important;
+  height: 100vh;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.sub__card {
+  width: 300px;
+  height: 100px;
+  background: #ffffff;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.sub__card:hover {
+  transform: scale(1.1);
+}
+.information__card {
+  width: auto !important;
+  height: 100vh;
+}
+
+.component3 {
+  width: 700px;
+  height: 100vh;
+  margin-top: 10px;
+}
+a {
+  text-decoration: none;
+}
+.card__three {
+  width: 546px;
+  background: #ebfaf9;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 12px;
+  height: 200px;
+  display: flex;
+  transition: transform 0.2s;
+}
+.card__three:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.services {
+  width: auto !important;
+  height: auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.service1,
+.service2 {
+  width: 260px;
+  height: 290px;
+  background: #ffffff;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin-top: 30px;
+  padding: 20px;
+  transition: transform 0.2s;
+}
+.service1:hover {
+  transform: scale(1.1);
+}
+.service2:hover {
+  transform: scale(1.1);
+}
+
+.image-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-content: flex-end;
+  margin-left: 150px;
+}
+
+.text-heading {
+  font-size: 2em;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 40px;
+  width: 100%;
+  color: #305677;
+}
+.text-paragraph {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #5f6770;
+  width: 100%;
+}
+
+.two {
+  color: #58a1a4;
+}
+.three {
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 110%;
+  color: #305677;
+}
+.four {
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 40px;
+  color: #263238;
+}
+.image2 {
+  margin-top: 70px;
+}
+
+.column1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 400px;
+  height: auto !important;
+}
+
+.column2 {
+  margin-top: 30px;
+}
+.green {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 110%;
+  color: #77c99d;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 0.35em 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8ebfc;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+  color: #305677;
+  cursor: pointer;
+  border: none;
+}

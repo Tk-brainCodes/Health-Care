@@ -1,0 +1,26 @@
+header {
+  width: 90vw;
+  padding: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-auth {
+  width: auto !important;
+  background: #fbfbf2;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.image-containerAvatar {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(158.82deg, #7789c9 13.96%, #6eb3f3 96.86%);
+  border-radius: 100%;
+}

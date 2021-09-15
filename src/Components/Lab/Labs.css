@@ -1,0 +1,15 @@
+.Labs__ {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.find__labs {
+  width: 80vw;
+  height: 500px;
+  background: #ffffff;
+  border: 0.5px solid #c3c3a8;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
