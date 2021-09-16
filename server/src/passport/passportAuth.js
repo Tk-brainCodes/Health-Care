@@ -30,9 +30,7 @@ const initializePassport = (passport) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-          return res
-            .status(StatusCodes.BAD_REQUEST)
-            .json({ errors: errors.array() });
+          return done({ errors: errors.array(), statusCode: 400 });
         }
         // async (email, password, done) => {
         try {
@@ -42,10 +40,7 @@ const initializePassport = (passport) => {
             return done({ message: "Invalid credentials" }, false);
           }
 
-          const validate = await bcrypt.compareSync(
-            password,
-            user.passwordHash
-          );
+          const validate = bcrypt.compareSync(password, user.passwordHash);
 
           if (!validate) {
             return done({ message: "Invalid credentials" }, false);
