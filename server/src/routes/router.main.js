@@ -7,6 +7,8 @@ module.exports = (app) => {
 
   //server the built react app from the public folder
   app.get("*", (req, res) => {
-    return res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+    return res.sendFile(
+      path.join(__dirname, "..", "..", "public", "index.html")
+    );
   });
 };
