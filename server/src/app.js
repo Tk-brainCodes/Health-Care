@@ -12,7 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 
 passportAuth.initializePassport(passport);
 
-const store = new MongoStore({ mongooseConnection: mongoose.connection });
+const store = new MongoStore({
+  //   client: mongoose.connection.collection("health_sessions"),
+  mongoUrl: process.env.MONGO_URI,
+});
 
 app.use(
   session({
