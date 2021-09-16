@@ -1,0 +1,2 @@
+(this["webpackJsonphealth-app"]=this["webpackJsonphealth-app"]||[]).push([[5],{52:function(s,a,t){},54:function(s,a,t){"use strict";t.r(a);t(0),t(52);var e=t(4);a.default=function(){return Object(e.jsx)("div",{className:"Labs__",children:Object(e.jsx)("div",{className:"find__labs"})})}}}]);
+//# sourceMappingURL=5.8063a0e1.chunk.js.map

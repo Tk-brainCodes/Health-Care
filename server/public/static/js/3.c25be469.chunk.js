@@ -1,0 +1,2 @@
+(this["webpackJsonphealth-app"]=this["webpackJsonphealth-app"]||[]).push([[3],{53:function(e,a,s){},57:function(e,a,s){"use strict";s.r(a);s(0);var t=s.p+"static/media/logo.f8fe8dd4.svg",c=(s(53),s(4));a.default=function(){return Object(c.jsxs)("header",{children:[Object(c.jsx)("div",{className:"logo",children:Object(c.jsx)("img",{src:t,alt:"logo"})}),Object(c.jsxs)("div",{className:"user-auth",children:[Object(c.jsx)("div",{className:"image-containerAvatar"}),"Eboreime thankGod"]})]})}}}]);
+//# sourceMappingURL=3.c25be469.chunk.js.map
