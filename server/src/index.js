@@ -8,7 +8,9 @@ const initDb = require("./startup/db");
 
 const server = http.createServer(app);
 
-const PORT = process.env.PORT(async function startServer() {
+const PORT = process.env.PORT;
+
+(async function startServer() {
   await initDb();
 
   server.listen(PORT, () => {
