@@ -1,40 +1,38 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import './Labs.css'
-import axios from 'axios'
-import Description from './LabDiscription/Description'
+import React, { useState, useEffect, Fragment } from "react";
+import "./Labs.css";
+import axios from "axios";
+import Description from "./LabDiscription/Description";
 
 const Labs = () => {
   const [labs, setLabs] = useState([]);
-  const [search, setSearch] = useState('');
-  const [selected, setSelected] = useState(['']);
+  const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState();
 
-
-  const apiURI = 'https://demo-api.pneumahealth.co/labs';
+  const apiURI = "https://demo-api.pneumahealth.co/labs";
   const fetchLabs = async () => {
-    const response = await axios.get(apiURI, { headers: { Accept: "application/json" } });
-    let userArray = [];
-    userArray.push(response.data.data);
-    console.log(response.data.data)
-    setLabs(userArray[0]);
-  }
+    try {
+      const { data } = await axios.get(apiURI, {
+        headers: { Accept: "application/json" },
+      });
+      setLabs(data.data);
+    } catch (err) {}
+  };
   useEffect(() => {
     fetchLabs();
-  }, [apiURI])
+  }, [apiURI]);
 
   const filterLabs = () => {
-    labs.filter(data => {
+    labs.filter((data) => {
       let labName = data.name.includes(search);
       let labLocation = data.country.includes(search);
-      return (
-        labName + labLocation
-      )
-    })
-  }
+      return labName + labLocation;
+    });
+  };
 
-  const displayLabs = () => {
-    setSelected(labs.map((theLabs) => theLabs.id));
-    console.log(selected, "this is selected");
-  }
+  const displayLabs = (selectedLab) => {
+    setSelected(selectedLab);
+    console.log(selectedLab, "this is selected");
+  };
   return (
     <Fragment>
       <div className="find__labs">
@@ -46,18 +44,19 @@ const Labs = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className="search__result">
-            {labs.map((seen) => (
-              <button key={seen.id} onClick={displayLabs}>
-                <h2>{seen.name}</h2>
-                <h3>{seen.city}, {seen.state}</h3>
+            {labs.map((lab) => (
+              <button key={lab.id} onClick={() => displayLabs(lab)}>
+                <h2>{lab.name}</h2>
+                <h3>
+                  {lab.city}, {lab.state}
+                </h3>
               </button>
             ))}
           </div>
         </div>
-        <div className="labs__section2">
-        </div>
+        <div className="labs__section2"></div>
       </div>
     </Fragment>
-  )
-}
-export default Labs
+  );
+};
+export default Labs;
