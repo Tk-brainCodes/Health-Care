@@ -15,7 +15,7 @@ const Labs = () => {
         headers: { Accept: "application/json" },
       });
       setLabs(data.data);
-    } catch (err) {}
+    } catch (err) { }
   };
   useEffect(() => {
     fetchLabs();
@@ -37,12 +37,17 @@ const Labs = () => {
     <Fragment>
       <div className="find__labs">
         <div className="labs___section1">
-          <input
-            type="text"
-            placeholder="Search for lab or location"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <div className="search__box">
+            <div className="search__form">
+              <input
+                type="text"
+                placeholder="Search for lab or location"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+            <div className="cancel__icon"></div>
+          </div>
           <div className="search__result">
             {labs.map((lab) => (
               <button key={lab.id} onClick={() => displayLabs(lab)}>
@@ -52,11 +57,11 @@ const Labs = () => {
                 </h3>
               </button>
             ))}
-
-            <Description lab={selected} />
           </div>
         </div>
-        <div className="labs__section2"></div>
+        <div className="labs__section2">
+          <Description lab={selected} />
+        </div>
       </div>
     </Fragment>
   );

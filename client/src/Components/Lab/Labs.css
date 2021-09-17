@@ -18,7 +18,18 @@
   box-sizing: border-box;
   border-radius: 8px 0px 0px 8px;
 }
+
 .labs___section2 {
   width: 50vw;
   height: inherit;
+}
+
+.search__form {
+  padding: 10px;
+  width: 300px;
+  background: #FFFFFF;
+  border: 0.5px solid #C3C3A8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-top: 20px;
 }

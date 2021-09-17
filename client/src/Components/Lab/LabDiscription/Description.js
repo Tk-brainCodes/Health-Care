@@ -4,7 +4,7 @@ const Description = ({ lab }) => {
   return (
     <Fragment>
       <div className="lab__discription">
-        <div className="lab__details" key={lab.id}>
+        <div className="lab__details">
           {lab ? (
             <div>
               Name: {lab.name} <br />
