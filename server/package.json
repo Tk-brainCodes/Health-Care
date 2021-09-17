@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.5.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -21,7 +22,8 @@
     "moment": "^2.29.1",
     "mongoose": "^6.0.6",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

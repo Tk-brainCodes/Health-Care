@@ -1,10 +1,9 @@
 {
-  "name": "Health-Care",
+  "name": "health-care",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scripts": {
       "install-client": "npm install --prefix client",
       "install-server": "npm install --prefix server",
       "install": "npm run install-client && npm run install-server",
@@ -12,7 +11,6 @@
       "server": "npm run watch --prefix server",
       "start": "npm run client & npm run server",
       "deploy": "npm run build --prefix client && npm start --prefix server"
-    }
   },
   "repository": {
     "type": "git",
