@@ -2,11 +2,15 @@ import React, { useState, useEffect, Fragment } from "react";
 import "./Labs.css";
 import axios from "axios";
 import Description from "./LabDiscription/Description";
-
+import Search from '../../assets/searchicon.svg'
+import Cancel from '../../assets/x.svg';
+import ExternalLink from '../../assets/external-link.svg';
+import Navigation from '../../assets/navigation.svg';
 const Labs = () => {
   const [labs, setLabs] = useState([]);
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState();
+  const [popup, setPopup] = useState(false)
 
   const apiURI = "https://demo-api.pneumahealth.co/labs";
   const fetchLabs = async () => {
@@ -15,6 +19,7 @@ const Labs = () => {
         headers: { Accept: "application/json" },
       });
       setLabs(data.data);
+      console.log(data.data)
     } catch (err) { }
   };
   useEffect(() => {
@@ -44,19 +49,33 @@ const Labs = () => {
                 placeholder="Search for lab or location"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
+                id="search"
               />
+              <button type="submit" id="search__btn">
+                <img src={Search} alt="searchIcon" />
+              </button>
+              <div className="cancel__icon">
+                <img src={Cancel} alt="Cancelicon" />
+              </div>
             </div>
-            <div className="cancel__icon"></div>
           </div>
           <div className="search__result">
-            {labs.map((lab) => (
-              <button key={lab.id} onClick={() => displayLabs(lab)}>
-                <h2>{lab.name}</h2>
-                <h3>
-                  {lab.city}, {lab.state}
-                </h3>
-              </button>
-            ))}
+            <div className="map__result">
+              {labs.map((lab) => (
+                <div className="search__click" key={lab.id} onClick={() => displayLabs(lab)}>
+                  <div className="lab__name">
+                    <h2>{lab.name}</h2>
+                    <p>
+                      {lab.address.city}, {lab.address.state}
+                    </p>
+                  </div>
+                  <div className="links__">
+                    <img src={ExternalLink} alt="Link" />
+                    <img src={Navigation} alt="navigation" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="labs__section2">
