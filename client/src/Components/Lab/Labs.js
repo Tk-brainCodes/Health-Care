@@ -1,10 +1,13 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import './Labs.css'
 import axios from 'axios'
+import Description from './LabDiscription/Description'
 
 const Labs = () => {
   const [labs, setLabs] = useState([]);
   const [search, setSearch] = useState('');
+  const [selected, setSelected] = useState(['']);
+
 
   const apiURI = 'https://demo-api.pneumahealth.co/labs';
   const fetchLabs = async () => {
@@ -12,20 +15,26 @@ const Labs = () => {
     let userArray = [];
     userArray.push(response.data.data);
     console.log(response.data.data)
-    setLabs(userArray[0].toString());
+    setLabs(userArray[0]);
   }
   useEffect(() => {
     fetchLabs();
   }, [apiURI])
 
-  const filterLabs = labs.filter((data) => {
-    let labName = data.name.toLowercase().includes(search.toLowercase());
-    let labLocation = data.country.toLowercase().includes(search.toLowercase());
-    return (
-      labName + labLocation
-    )
-  });
+  const filterLabs = () => {
+    labs.filter(data => {
+      let labName = data.name.includes(search);
+      let labLocation = data.country.includes(search);
+      return (
+        labName + labLocation
+      )
+    })
+  }
 
+  const displayLabs = () => {
+    setSelected(labs.map((theLabs) => theLabs.id));
+    console.log(selected, "this is selected");
+  }
   return (
     <Fragment>
       <div className="find__labs">
@@ -37,20 +46,15 @@ const Labs = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className="search__result">
-            {filterLabs.map((seen, i) => (
-              <div key={i}>
+            {labs.map((seen) => (
+              <button key={seen.id} onClick={displayLabs}>
                 <h2>{seen.name}</h2>
                 <h3>{seen.city}, {seen.state}</h3>
-              </div>
+              </button>
             ))}
           </div>
         </div>
         <div className="labs__section2">
-          {labs.map((lab, i) => (
-            <div className="lab__details" key={i}>
-              {lab.name}
-            </div>
-          ))}
         </div>
       </div>
     </Fragment>
