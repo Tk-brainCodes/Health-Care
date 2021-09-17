@@ -2,15 +2,15 @@ import React, { useState, useEffect, Fragment } from "react";
 import "./Labs.css";
 import axios from "axios";
 import Description from "./LabDiscription/Description";
-import Search from '../../assets/searchicon.svg'
-import Cancel from '../../assets/x.svg';
+// import Search from '../../assets/searchicon.svg'
+// import Cancel from '../../assets/x.svg';
 import ExternalLink from '../../assets/external-link.svg';
 import Navigation from '../../assets/navigation.svg';
 
 
 const Labs = () => {
   const [labs, setLabs] = useState([]);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [selected, setSelected] = useState();
 
   const apiURI = "https://demo-api.pneumahealth.co/labs";
@@ -27,13 +27,13 @@ const Labs = () => {
     fetchLabs();
   }, [apiURI]);
 
-  const filterLabs = () => {
-    labs.filter((data) => {
-      let labName = data.name.includes(search);
-      let labLocation = data.country.includes(search);
-      return labName + labLocation;
-    });
-  };
+  // const filterLabs = () => {
+  //   labs.filter((data) => {
+  //     let labName = data.name.includes(search);
+  //     let labLocation = data.country.includes(search);
+  //     return labName + labLocation;
+  //   });
+  // };
 
   const displayLabs = (selectedLab) => {
     setSelected(selectedLab);
