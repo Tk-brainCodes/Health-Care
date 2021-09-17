@@ -5,6 +5,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  top: 0;
 }
 .user-auth {
   width: auto !important;

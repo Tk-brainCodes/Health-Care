@@ -75,7 +75,7 @@ const HomePage = () => {
                 </div>
                 <br />
                 <div className='text-heading green'>
-                  Home <br /> Service
+                  Home <br /> Services
                 </div>
                 <div className='text-paragraph'>
                   We will bring the clinic to <br /> you and take your samples.

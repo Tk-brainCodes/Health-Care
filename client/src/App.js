@@ -6,7 +6,7 @@ const HomePage = lazy(() => import('./Components/Homepage/Home'))
 const Lab = lazy(() => import('./Components/Lab/Labs'))
 const Header = lazy(() => import('./Components/Header/Header'))
 
-function App () {
+function App() {
   return (
     <div className='App'>
       <Suspense
@@ -20,8 +20,8 @@ function App () {
           />
         }
       >
-        <Header />
         <Switch>
+          <Header />
           <Route exact path='/'>
             <HomePage />
           </Route>

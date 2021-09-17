@@ -2,4 +2,10 @@
     box-sizing: border-box;
     overflow-x: hidden;
     background: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
