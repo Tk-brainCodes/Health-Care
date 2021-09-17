@@ -52,6 +52,8 @@ const Labs = () => {
                 </h3>
               </button>
             ))}
+
+            <Description lab={selected} />
           </div>
         </div>
         <div className="labs__section2"></div>
