@@ -6,17 +6,18 @@ import Search from '../../assets/searchicon.svg'
 import Cancel from '../../assets/x.svg';
 import ExternalLink from '../../assets/external-link.svg';
 import Navigation from '../../assets/navigation.svg';
+
+
 const Labs = () => {
   const [labs, setLabs] = useState([]);
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState();
-  const [popup, setPopup] = useState(false)
 
   const apiURI = "https://demo-api.pneumahealth.co/labs";
   const fetchLabs = async () => {
     try {
       const { data } = await axios.get(apiURI, {
-        headers: { Accept: "application/json" },
+        headers: { Accept: "application/json", Authorization: 'Bearer 5fvdi1w3tl352i4nmejn' }
       });
       setLabs(data.data);
       console.log(data.data)
@@ -42,6 +43,7 @@ const Labs = () => {
     <Fragment>
       <div className="find__labs">
         <div className="labs___section1">
+          {/*
           <div className="search__box">
             <div className="search__form">
               <input
@@ -59,6 +61,8 @@ const Labs = () => {
               </div>
             </div>
           </div>
+          */}
+          <h2 id="labs__now">Avaliable Laboratories</h2>
           <div className="search__result">
             <div className="map__result">
               {labs.map((lab) => (

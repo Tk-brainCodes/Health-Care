@@ -121,3 +121,7 @@ b {
   align-items: center;
   justify-content: space-between;
 }
+
+#labs__now {
+  padding: 20px;
+}

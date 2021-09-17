@@ -1,0 +1,202 @@
+ .lab__discription {
+     width: 40vw;
+     height: inherit;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+
+ #large__heading {
+     font-style: normal;
+     font-weight: bold;
+     font-size: 2em;
+     line-height: 47px;
+     color: #364143;
+ }
+
+ .buttons__ {
+     width: 100%;
+     padding: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .website, .call {
+     padding: 0.8em 1.5em;
+     background: #EBFAF9;
+     border: 0.5px solid #6EB3F3;
+     box-sizing: border-box;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 1em;
+     line-height: 18px;
+     color: #305677;
+     cursor: pointer;
+ }
+
+ .appointment {
+     background: #6EB3F3;
+     border: 0.5px solid #6EB3F3;
+     box-sizing: border-box;
+     border-radius: 8px;
+     padding: 0.8em 2em;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 14px;
+     line-height: 18px;
+     color: #FFFFFF;
+     cursor: pointer;
+ }
+
+ #details {
+     padding: 10px;
+     line-height: 21px;
+     color: #364143;
+     margin: 0px 12px;
+ }
+
+ .test__available {
+     width: 30vw;
+     height: auto !important;
+     height: auto !important;
+     margin-top: 50px;
+ }
+
+ #test__heading {
+     font-style: normal;
+     font-weight: bold;
+     font-size: 1.2em;
+     line-height: 21px;
+     color: #364143;
+ }
+
+ .test__tags {
+     background: #FFFFFF;
+     border: 0.5px solid #6EB3F3;
+     border-radius: 8px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 10px;
+     cursor: pointer;
+     font-weight: normal;
+     font-size: 0.8em;
+     line-height: 21px;
+     color: #364143;
+ }
+
+ .appointment__container {
+     width: 100%;
+     height: auto !important;
+     background: #FFFFFF;
+     border: 0.5px solid #C3C3A8;
+     box-sizing: border-box;
+     border-radius: 12px;
+     padding: 20px;
+ }
+
+ .appointment__heading {
+     display: flex;
+     height: 150px;
+     align-items: center;
+     justify-content: space-between;
+     width: 100%;
+     background: #FFFFFF;
+     border-bottom: 0.5px solid #C3C3A8;
+     box-sizing: border-box;
+ }
+
+ .slot__container {
+     width: 100%;
+     height: auto !important;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     margin-top: 30px;
+     gap:30px;
+ }
+
+ .slots {
+     cursor: pointer;
+     padding: 1em 3em;
+     background: #FFFFFF;
+     border: 0.5px solid #C3C3A8;
+     box-sizing: border-box;
+     border-radius: 12px;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 0.8em;
+     line-height: 18px;
+     color: #364143;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.2s;
+ }
+
+ .available__slot {
+     font-style: normal;
+     font-weight: bold;
+     font-size: 0.8em;
+     line-height: 16px;
+     color: #5F6770;
+ }
+
+ .slots:hover {
+     transform: scale(1.1);
+     border: 2px solid #58A1A4;
+ }
+
+ #date__picker {
+     padding: 1em 2em;
+     background: #FFFFFF;
+     border: 0.5px solid #C3C3A8;
+     box-sizing: border-box;
+     border-radius: 12px;
+ }
+
+ .appointment__logo {
+     font-style: normal;
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 21px;
+     color: #364143;
+ }
+
+ .cta__buttons {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 20px;
+     float: right;
+     gap: 20px;
+ }
+
+ .book__now {
+     background: #58A1A4;
+     border: 0.5px solid #C3C3A8;
+     box-sizing: border-box;
+     border-radius: 12px;
+     padding: 0.9em 2em;
+     font-size: 0.8em;
+     font-weight: bold;
+     line-height: 18px;
+     color: #FEFEF6;
+     cursor: pointer;
+ }
+
+ .fallback__image {
+     width: 30vw;
+     height: inherit;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 50px;
+ }
