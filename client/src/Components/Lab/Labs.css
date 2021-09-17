@@ -1,5 +1,5 @@
 .find__labs {
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   background: #ffffff;
   border: 0.5px solid #c3c3a8;
@@ -11,25 +11,113 @@
 }
 
 .labs___section1 {
-  width: 30vw;
+  width: 40vw;
   height: inherit;
   background: #FFFFFF;
   border: 0.5px solid #C3C3A8;
   box-sizing: border-box;
   border-radius: 8px 0px 0px 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+b {
+  margin: 0px 12px;
+  line-height: 21px;
+  color: #5F6770;
 }
 
 .labs___section2 {
   width: 50vw;
   height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .search__form {
   padding: 10px;
-  width: 300px;
+  width: 30vw;
   background: #FFFFFF;
   border: 0.5px solid #C3C3A8;
   box-sizing: border-box;
   border-radius: 8px;
   margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__click:hover {
+  transition: 0.3s ease;
+  background: #EBFAF9;
+}
+
+#search {
+  padding: 0.5em 4em;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 18px;
+  color: #968484;
+}
+
+#search__btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cancel__icon {
+  width: 40px;
+  height: 40px;
+  background: #FEFAFA;
+  border: 0.5px solid #FF725E;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__result {
+  width: inherit;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+.search__click {
+  width: inherit;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5px solid #C3C3A8;
+  box-sizing: border-box;
+  padding: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #364143;
+}
+
+.links__ {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
