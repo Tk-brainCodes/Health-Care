@@ -1,8 +1,8 @@
-class Unauthorized extends Error {
+class UnauthorizedError extends Error {
   statusCode = 401;
   constructor() {
     super("Internal server error");
-    Object.setPrototypeOf(this, Unauthorized.prototype);
+    Object.setPrototypeOf(this, UnauthorizedError.prototype);
   }
 
   serializeErrors() {
@@ -15,5 +15,5 @@ class Unauthorized extends Error {
 }
 
 module.exports = {
-  Unauthorized,
+  UnauthorizedError,
 };

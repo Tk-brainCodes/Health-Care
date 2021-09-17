@@ -1,5 +1,6 @@
 const passport = require("passport");
 const { ServerError } = require("../errors/ServerError");
+const { UnauthorizedError } = require("../errors/UnauthorizedError");
 
 const customAuthenticate = () => {
   return (req, res, next) => {
@@ -9,7 +10,7 @@ const customAuthenticate = () => {
       }
       if (!user) {
         //check info then respond accordingly if
-        return res.status(401).json({ message: "Invalid login details" });
+        throw new UnauthorizedError();
       }
 
       req.logIn(user, function (err) {
