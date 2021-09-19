@@ -1,0 +1,77 @@
+.register {
+    background: #FFFFFF;
+    border: 0.5px solid #C3C3A8;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 550px;
+    height: auto !important;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.register__now {
+    width: 100%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 36px;
+    color: #263238;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 16px;
+    color: #364143;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input {
+    background: #FFFFFF;
+    border: 0.5px solid #C3C3A8;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 470px;
+    height: 48px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8em;
+    line-height: 18px;
+    color: #5F6770;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login {
+    background: #58A1A4;
+    border: 0.5px solid #C3C3A8;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.redirect__route {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 16px;
+    color: #364143;
+}
