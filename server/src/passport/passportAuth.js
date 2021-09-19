@@ -1,7 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy;
-const User = require("../models/user/user.model");
+const User = require("../models/user/user.mongo");
 const bcrypt = require("bcryptjs");
-const { validationResult } = require("express-validator");
 
 const initializePassport = (passport) => {
   // Passport needs to be able to serialize and deserialize users to support persistent login sessions
@@ -24,14 +23,8 @@ const initializePassport = (passport) => {
       {
         usernameField: "email",
         passwordField: "password",
-        passReqToCallback: true,
       },
-      async function (req, email, password, done) {
-        const errors = validationResult(req);
-
-        if (!errors.isEmpty()) {
-          return done({ errors: errors.array(), statusCode: 400 });
-        }
+      async function (email, password, done) {
         // async (email, password, done) => {
         try {
           const user = await User.findOne({ email });

@@ -1,26 +1,43 @@
 const passport = require("passport");
-const { ServerError } = require("../errors/ServerError");
+const { promisify } = require("util");
 
-const customAuthenticate = () => {
-  return (req, res, next) => {
-    passport.authenticate("local", function (err, user, info) {
-      if (err) {
-        throw new ServerError();
-      }
-      if (!user) {
-        //check info then respond accordingly if
-        return res.status(401).json({ message: "Invalid login details" });
-      }
+const { validationResult } = require("express-validator");
 
-      req.logIn(user, function (err) {
-        if (err) {
-          throw new ServerError();
-        }
-        //if no userType is  supplied all signedin users  are authorized
-        return next();
+const { RequestValidationError } = require("../errors/RequestValidationError");
+
+const customAuthenticate = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    throw new RequestValidationError(errors.array());
+  }
+  passport.authenticate("local", function (err, user, info) {
+    if (err) {
+      // console.error(err);
+      if (err.message === "Invalid credentials") {
+        return res.status(400).json({
+          errors: [{ message: "Invalid credentials" }],
+        });
+      }
+      return res.status(500).json({
+        errors: [{ message: "Something went wrong" }],
       });
-    })(req, res, next);
-  };
+    }
+    if (!user) {
+      //check info then respond accordingly if
+      return res.status(400).json({
+        errors: [{ message: "Invalid credentials" }],
+      });
+    }
+
+    req.logIn(user, function (err) {
+      if (err) {
+        return res.status(500).json({
+          errors: [{ message: "Something went wrong" }],
+        });
+      }
+      return next();
+    });
+  })(req, res, next);
 };
 
 module.exports = {

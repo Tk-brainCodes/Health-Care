@@ -1,10 +1,14 @@
 const path = require("path");
 const express = require("express");
+require("express-async-errors");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
 const passport = require("passport");
 const passportAuth = require("./passport/passportAuth");
+
+//errorhandler import
+const { errorHandler } = require("./middleware/errorHandler");
 
 const app = express();
 
@@ -35,5 +39,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/router.main")(app);
+app.use(errorHandler);
 
 module.exports = { app };

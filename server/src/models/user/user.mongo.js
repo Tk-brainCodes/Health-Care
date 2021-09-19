@@ -18,12 +18,11 @@ const schema = new Schema({
   },
 });
 
-schema.pre("save", async function (next) {
-  if (!this.isModified("passwordHash")) {
-    next();
+schema.pre("save", async function (done) {
+  if (this.isModified("passwordHash")) {
+    this.passwordHash = await generatePasswordHash(this.passwordHash);
   }
-
-  this.passwordHash = await generatePasswordHash(this.passwordHash);
+  done();
 });
 
 const generatePasswordHash = async (password) => {

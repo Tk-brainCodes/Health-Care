@@ -5,6 +5,7 @@ const {
   httpSignUpController,
   httpSignoutController,
 } = require("../../controllers/auth.controllers");
+const { customAuthenticate } = require("../../middleware/customauthenticate");
 
 //base -  /api/v1/auth  at 16/09/2021
 const router = express.Router();
@@ -12,18 +13,35 @@ const router = express.Router();
 router.post(
   "/signin",
   [
-    body("email").isEmail(),
-    body("password").isString().trim().isLength({ min: 4 }),
+    body("email").isEmail().withMessage("email must be valid"),
+    body("password")
+      .isString()
+      .trim()
+      .isLength({ min: 4 })
+      .withMessage("password must be at least 4 characters"),
   ],
+  customAuthenticate,
   httpSigninController
 );
 router.post(
   "/signup",
   [
-    body("email").isEmail(),
-    body("password").isString().trim().isLength({ min: 4 }),
-    body("firstName").isString().trim().isLength({ min: 2 }),
-    body("lastName").isString().trim().isLength({ min: 2 }),
+    body("email").isEmail().withMessage("email must be valid"),
+    body("password")
+      .isString()
+      .trim()
+      .isLength({ min: 4 })
+      .withMessage("password must be at least 4 characters"),
+    body("firstName")
+      .isString()
+      .trim()
+      .isLength({ min: 2 })
+      .withMessage("firstName must be at least 2 characters"),
+    body("lastName")
+      .isString()
+      .trim()
+      .isLength({ min: 2 })
+      .withMessage("lastName must be at least 2 characters"),
   ],
   httpSignUpController
 );

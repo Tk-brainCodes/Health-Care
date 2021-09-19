@@ -1,4 +1,6 @@
-class Unauthorized extends Error {
+const { ServerError } = require("./ServerError");
+
+class Unauthorized extends ServerError {
   statusCode = 401;
   constructor() {
     super("Internal server error");

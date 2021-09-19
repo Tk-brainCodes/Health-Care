@@ -1,5 +1,6 @@
 {
   "name": "health-care",
+  "proxy": "http://localhost:4500",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/Tk-brainCodes/Health-Care/issues"
   },
-  "homepage": "https://github.com/Tk-brainCodes/Health-Care#readme"
+  "homepage": "https://github.com/Tk-brainCodes/Health-Care#readme",
+  "dependencies": {
+    "formik": "^2.2.9",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "yup": "^0.32.9"
+  }
 }
