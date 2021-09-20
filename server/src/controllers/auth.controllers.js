@@ -9,18 +9,9 @@ const httpSignUpController = async (req, res) => {
   }
   const { firstName, lastName, email, password } = req.body;
   try {
-    const newUserObj = await createNewUser(
-      firstName,
-      lastName,
-      email,
-      password
-    );
-    const newUser = { ...newUserObj };
-    delete newUser.passwordHash;
-    delete newUser.__V;
-    delete newUser._id;
+    const newUser = await createNewUser(firstName, lastName, email, password);
     req.login(newUser, (err) => {
-      console.log({ loginerr: err });
+      // console.log({ loginerr: err });
       if (err) {
         return res.status(500).json({
           errors: [{ message: "Something went wrong" }],

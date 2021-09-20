@@ -7,7 +7,7 @@ export const grantUserAccess = (moduleAuth, userRole) => {
   if (!userRole) {
     return false;
   }
-  console.log({ moduleAuth, userRole });
+  // console.log({ moduleAuth, userRole });
   if (moduleAuth === userRole) {
     return true;
   } else {

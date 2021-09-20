@@ -5,7 +5,6 @@ const bcrypt = require("bcryptjs");
 const initializePassport = (passport) => {
   // Passport needs to be able to serialize and deserialize users to support persistent login sessions
   passport.serializeUser(function (user, done) {
-    //logger.debug('serializing user', {meta: user});
     done(null, user._id);
   });
 

@@ -1,7 +1,7 @@
-const userModel = require("./user.mongo");
+const User = require("./user.mongo");
 
 const createNewUser = async (firstName, lastName, email, password) => {
-  const newUser = userModel({
+  const newUser = new User({
     firstName,
     lastName,
     email,
